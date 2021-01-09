@@ -1,12 +1,10 @@
 package lk.ijse.ws.instaclone.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
-public class InstaUser  {
+public class InstaUser {
 
     @Id
     @GeneratedValue
@@ -20,6 +18,22 @@ public class InstaUser  {
 
     @Column
     private String password;
+
+    @OneToMany
+    @MapKey(name = "user")
+    private List<Post> postList;
+
+    @OneToMany
+    @MapKey(name = "reactor")
+    private List<React> reactList;
+
+    @OneToMany
+    @MapKey(name = "sharedUser")
+    private List<Share> shareList;
+    
+    @OneToMany
+    @MapKey(name = "commenter")
+    private List<Comment> commentList;
 
     public Long getId() {
         return id;

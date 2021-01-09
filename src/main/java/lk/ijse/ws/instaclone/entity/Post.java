@@ -2,6 +2,7 @@ package lk.ijse.ws.instaclone.entity;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class Post {
@@ -9,13 +10,21 @@ public class Post {
     @Id
     private Long id;
 
-    @OneToOne(cascade = CascadeType.ALL,optional = false)
+    @ManyToOne
     private InstaUser user;
-
-
     private String text;
     private String imageUrl;
     private Date postTime;
+
+    @OneToMany
+    @MapKey(name = "post")
+    private List<Comment> commentList;
+    @OneToMany
+    @MapKey(name = "post")
+    private List<React> reactList;
+    @OneToMany
+    @MapKey(name = "post")
+    private List<Share> shareList;
 
     public Long getId() {
         return id;
