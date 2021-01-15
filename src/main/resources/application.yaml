@@ -20,3 +20,11 @@ spring:
           cognito:
             issuerUri: https://cognito-idp.eu-west-1.amazonaws.com/eu-west-1_zR0hloKwB
             user-name-attribute: cognito:username
+lk:
+  ijse:
+    ws:
+      jwt:
+        userPoolId: "eu-west-1_zR0hloKwB"
+        region: "eu-west-1"
+        jwk-url: "https://cognito-idp.eu-west-1.amazonaws.com/eu-west-1_zR0hloKwB/.well-known/jwks.json"
+        user-name-field: "username"

@@ -20,10 +20,14 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
 
-    // https://mvnrepository.com/artifact/org.springframework.security/spring-security-oauth2-jose
-    compile group: 'org.springframework.security', name: 'spring-security-oauth2-jose', version: '5.4.2'
-// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-oauth2-client
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-oauth2-client', version: '2.4.1'
+//    // https://mvnrepository.com/artifact/org.springframework.security/spring-security-oauth2-jose
+//    compile group: 'org.springframework.security', name: 'spring-security-oauth2-jose', version: '5.4.2'
+//// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-oauth2-client
+//    compile group: 'org.springframework.boot', name: 'spring-boot-starter-oauth2-client', version: '2.4.1'
+// https://mvnrepository.com/artifact/com.nimbusds/nimbus-jose-jwt
+    compile group: 'com.nimbusds', name: 'nimbus-jose-jwt', version: '9.4.1'
+
+    annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
 
 }
 
