@@ -1,0 +1,22 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:mysql://localhost:3306/insta_clone_db
+    username: insta_clone_user
+    password: 1qaz2wsx
+  security:
+    oauth2:
+      client:
+        registration:
+          cognito:
+            client-id: your_clientId
+            client-secret: your_clientSecret
+            scope: openid
+            redirect-uri: http://localhost:8080/login/oauth2/code/cognito
+            clientName: your_clientName
+        provider:
+          cognito:
+            issuerUri: https://cognito-idp.{region}.amazonaws.com/{poolId}
+            user-name-attribute: cognito:username
