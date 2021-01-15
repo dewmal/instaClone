@@ -11,12 +11,12 @@ spring:
       client:
         registration:
           cognito:
-            client-id: your_clientId
-            client-secret: your_clientSecret
+            client-id: 1r1et1rv9ckjekg18jg8j0rogq
+            client-secret: 12golp9e8kf2fvablmdpon1jbl2nkcel1j65vjckd4qj0frisd44
             scope: openid
             redirect-uri: http://localhost:8080/login/oauth2/code/cognito
             clientName: your_clientName
         provider:
           cognito:
-            issuerUri: https://cognito-idp.{region}.amazonaws.com/{poolId}
+            issuerUri: https://cognito-idp.eu-west-1.amazonaws.com/eu-west-1_zR0hloKwB
             user-name-attribute: cognito:username
