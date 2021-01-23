@@ -11,20 +11,20 @@ spring:
       client:
         registration:
           cognito:
-            client-id: 1r1et1rv9ckjekg18jg8j0rogq
-            client-secret: 12golp9e8kf2fvablmdpon1jbl2nkcel1j65vjckd4qj0frisd44
+            client-id: 430l59rjp809thqch19af8hl31
+            client-secret: 2dud3q6v4tjkkro46bt5gm0pcfod87tnf0e736174di70jt8tn2
             scope: openid
             redirect-uri: http://localhost:8080/login/oauth2/code/cognito
             clientName: your_clientName
         provider:
           cognito:
-            issuerUri: https://cognito-idp.eu-west-1.amazonaws.com/eu-west-1_zR0hloKwB
+            issuerUri: https://cognito-idp.eu-west-1.amazonaws.com/eu-west-1_zQLZYOVyg
             user-name-attribute: cognito:username
 lk:
   ijse:
     ws:
       jwt:
-        userPoolId: "eu-west-1_zR0hloKwB"
+        userPoolId: "eu-west-1_zQLZYOVyg"
         region: "eu-west-1"
-        jwk-url: "https://cognito-idp.eu-west-1.amazonaws.com/eu-west-1_zR0hloKwB/.well-known/jwks.json"
+        jwk-url: "https://cognito-idp.eu-west-1.amazonaws.com/eu-west-1_zQLZYOVyg/.well-known/jwks.json"
         user-name-field: "username"

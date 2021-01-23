@@ -10,9 +10,9 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
 import java.util.List;
 
-import static java.util.List.of;
 
 @Component
 public class AwsCognitoIdTokenProcessor {
@@ -33,8 +33,9 @@ public class AwsCognitoIdTokenProcessor {
             System.out.println(claims);
             String username = getUserNameFrom(claims);
             if (username != null) {
-                List<GrantedAuthority> grantedAuthorities = of(new SimpleGrantedAuthority("ROLE_ADMIN"));
-                User user = new User(username, "", of());
+                List<GrantedAuthority> grantedAuthorities = new ArrayList<GrantedAuthority>();
+                grantedAuthorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
+                User user = new User(username, "", new ArrayList<>());
                 return new JwtAuthentication(user, claims, grantedAuthorities);
             }
         }
